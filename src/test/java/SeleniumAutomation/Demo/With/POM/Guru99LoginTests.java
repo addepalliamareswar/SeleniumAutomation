@@ -4,6 +4,10 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+
+import com.aventstack.extentreports.Status;
+
+import SeleniumAutomation.Demo.Extent.Reports.ExtentTestManager;
 import SeleniumAutomation.Demo.firstpackage.AbstractTestClass;
 
 public class Guru99LoginTests extends AbstractTestClass {
@@ -21,6 +25,8 @@ public class Guru99LoginTests extends AbstractTestClass {
 	@Test
 
     public void testHomePageAppearCorrect(){
+
+		ExtentTestManager.getTest().log(Status.INFO, "Started Home page test");
 
         //Create Login Page object
         objLogin = new Guru99LoginPage(driver);
@@ -42,6 +48,9 @@ public class Guru99LoginTests extends AbstractTestClass {
         
         //Verify home page
         Assert.assertEquals(expectedUserName, actualValue);
+        
+		ExtentTestManager.getTest().log(Status.INFO, "End Home page test");
+
 
     } 
 
