@@ -16,6 +16,7 @@ import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -38,14 +39,15 @@ public class ElementLibrary {
 
     //private static final QeLogger log = new QeLogger(MethodHandles.lookup());
 
-    private RemoteWebDriver driver;
+    private WebDriver driver;
 
     private static final int DEFAULT_ELEMENT_TO_BE_APPEAR_TIMEOUT_IN_SECONDS = 40;
     private static final int DEFAULT_ELEMENT_TO_BE_CLICKABLE_TIMEOUT_IN_SECONDS = 40;
     private static final int DEFAULT_FRAME_TO_BE_AVAILABLE_TIMEOUT_IN_SECONDS = 50;
 
-    public ElementLibrary(RemoteWebDriver driver) {
+    public ElementLibrary(WebDriver driver) {
         this.driver = driver;
+        System.out.println("DRIVER : "+driver);
     }
     
     public WebElement elementToBePresent(String locateBy, String locatorValue) {
@@ -404,7 +406,7 @@ public class ElementLibrary {
         }
     }
 
-    public void waitForAttributeValue(String locateBy, String locatorValue) {
+   /* public void waitForAttributeValue(String locateBy, String locatorValue) {
         WebDriverWait wait = new WebDriverWait(driver, DEFAULT_ELEMENT_TO_BE_APPEAR_TIMEOUT_IN_SECONDS);
 
         try {
@@ -441,7 +443,7 @@ public class ElementLibrary {
             throw new RuntimeException("Exception found while locating the element.", e);
         }
 
-    }
+    }*/
 
     // TODO : Currently explicit wait is not working while new screen is loading.
     // Need to debug, will replace it once solution is found.
