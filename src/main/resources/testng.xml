@@ -5,7 +5,7 @@
 		<listener class-name="SeleniumAutomation.Demo.TestListener" />
 	</listeners>
 	
-  <test name="First Test scripts">  
+  <test name="First Test scripts" parallel = "methods" thread-count = "2">  
     <classes>  
       <class name="SeleniumAutomation.Demo.firstpackage.FirstTestClass"/>
       <class name="SeleniumAutomation.Demo.firstpackage.SecondTestClass"/>

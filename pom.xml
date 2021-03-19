@@ -70,12 +70,6 @@
     <artifactId>json-schema-validator</artifactId>
     <version>3.3.0</version>
 </dependency> 
-
-    <dependency>
-    <groupId>org.apache.poi</groupId>
-    <artifactId>poi</artifactId>
-    <version>4.1.2</version>
-</dependency>
 <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi-ooxml</artifactId>
@@ -86,6 +80,11 @@
 	<groupId>com.aventstack</groupId>
 	<artifactId>extentreports</artifactId>
 	<version>3.1.5</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.pdfbox</groupId>
+    <artifactId>pdfbox</artifactId>
+    <version>2.0.20</version>
 </dependency>
   </dependencies>
 
